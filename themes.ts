@@ -1,7 +1,35 @@
 import { darken, lighten, mix, toHex } from 'https://cdn.skypack.dev/color2k?min';
+import Theme from "./theme.d.ts"
 
-function generateTheme (c1, c2, c3, c4) {
-  const theme = {}
+function createEmptyTheme(): Theme {
+  return {
+    black: "",
+    softBlack: "",
+    red: "",
+    softRed: "",
+    green: "",
+    softGreen: "",
+    yellow: "",
+    softYellow: "",
+    blue: "",
+    softBlue: "",
+    magenta: "",
+    softMagenta: "",
+    cyan: "",
+    softCyan: "",
+    white: "",
+    softWhite: "",
+    background: "",
+    foreground: "",
+    cursorColor: "",
+    cursorText: "",
+    selectionBackground: "",
+    selectionForeground: "",
+  };
+}
+
+function generateTheme (c1: string, c2: string, c3: string, c4: string): Theme {
+  const theme = createEmptyTheme()
   theme.black = toHex(darken("#" + c1, 0.2)).slice(1)
   theme.softBlack = toHex(lighten("#" + theme.black, 0.1)).slice(1)
   theme.red = c1
@@ -27,8 +55,7 @@ function generateTheme (c1, c2, c3, c4) {
   return theme
 }
 
-
-function generateFile (theme) {
+function generateFile (theme: Theme) {
   const file = 
   `palette = 0=#${theme.black}
 palette = 1=#${theme.red}

@@ -1,10 +1,8 @@
 import { colors } from "https://deno.land/x/cliffy@v1.0.0-rc.4/ansi/colors.ts";
-import {
-  keypress,
-  KeyPressEvent,
-} from "https://deno.land/x/cliffy@v1.0.0-rc.4/keypress/mod.ts";
-import { darken, lighten, mix, toHex } from 'https://cdn.skypack.dev/color2k?min';
+import { keypress } from "https://deno.land/x/cliffy@v1.0.0-rc.4/keypress/mod.ts";
 import { keymaps, maxKeySize } from "./keymaps.ts"
+import Theme from "./theme.d.ts"
+
 
 const showMenu = () => {
   console.log(colors.bgBlue.black("  GWizard ⊂(´・◡・⊂ )  "))
@@ -12,7 +10,7 @@ const showMenu = () => {
   console.log("Colores de tu tema")
 }
 
-const showColors = (c1, c2, c3, c4) => {
+const showColors = (c1: string, c2: string, c3: string, c4: string) => {
   console.log(
     colors.rgb24("██", parseInt(c1, 16)),
     colors.rgb24("██", parseInt(c2, 16)),
@@ -41,14 +39,14 @@ const showHelp = async () => {
     const voidSpace = " ".repeat(maxKeySize - key.length);
     console.log(key, voidSpace, "   -   ", value)
   }
-  for await (const event: KeyPressEvent of keypress()) {
+  for await (const event of keypress()) {
     if (event.key === "?") {
       break 
     }
   }
 }
 
-const showTheme = async (c1, c2, c3, c4, theme) => {
+const showTheme = async (theme: Theme) => {
   console.clear()
   console.log(colors.bgCyan.black("  Tema generado ⊂(´ ★ u ★ ⊂ )  "))
   console.log("")
@@ -114,7 +112,7 @@ const showTheme = async (c1, c2, c3, c4, theme) => {
     colors.rgb24("██", parseInt(selectionForeground, 16)), "selection-foreground",
   )
 
-  for await (const event: KeyPressEvent of keypress()) {
+  for await (const event of keypress()) {
     if (event.key === "t") {
       break 
     }
