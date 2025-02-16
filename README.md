@@ -1,5 +1,2 @@
-# GWizard
-Un creador de temas para ghostty terminal
-
-# Tecnologías
-- Deno 2
+# Gwizard
+Un creador de temas para la terminal de ghostty terminal
