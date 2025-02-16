@@ -39,11 +39,6 @@ const showHelp = async () => {
     const voidSpace = " ".repeat(maxKeySize - key.length);
     console.log(key, voidSpace, "   -   ", value)
   }
-  for await (const event of keypress()) {
-    if (event.key === "?") {
-      break 
-    }
-  }
 }
 
 const showTheme = async (theme: Theme) => {
@@ -111,12 +106,6 @@ const showTheme = async (theme: Theme) => {
   console.log(
     colors.rgb24("██", parseInt(selectionForeground, 16)), "selection-foreground",
   )
-
-  for await (const event of keypress()) {
-    if (event.key === "t") {
-      break 
-    }
-  }
 }
 
 export { showMenu, showColors, showCancel, showHelp, showTheme, showSuccess }

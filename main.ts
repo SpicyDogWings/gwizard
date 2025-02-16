@@ -22,7 +22,12 @@ for await (const event of keypress()) {
     color[parseInt(event.key, 10) - 1] = await Input.prompt(`Color ${event.key}`);
   }  else if (event.key && event.key === "t") {
     const theme: Theme = generateTheme(color[0], color[1], color[2], color[3])
-    await showTheme(theme)
+    showTheme(theme)
+    for await (const event of keypress()) {
+      if (event.key === "t") {
+        break 
+      }
+    }
   } else if (event.key && event.key === "n") {
     console.clear()
     console.log(colors.bgBlue.black("  Nombre del tema  "))
@@ -42,7 +47,12 @@ for await (const event of keypress()) {
       Deno.exit()
     }
   } else if (event.key && event.key === "?") {
-    await showHelp()
+    showHelp()
+    for await (const event of keypress()) {
+      if (event.key === "?") {
+        break 
+      }
+    }
   } else if (event.key && event.key === "q") {
     console.clear()
     showCancel()
