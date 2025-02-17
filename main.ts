@@ -1,9 +1,9 @@
 import { colors } from "https://deno.land/x/cliffy@v1.0.0-rc.4/ansi/colors.ts";
 import { keypress } from "https://deno.land/x/cliffy@v1.0.0-rc.4/keypress/mod.ts";
 import { Input } from "https://deno.land/x/cliffy@v1.0.0-rc.4/prompt/mod.ts";
-import { showMenu, showColors, showCancel, showHelp, showTheme, showSuccess } from './messages.ts'
-import { generateFile, generateTheme } from "./themes.ts"
-import Theme from"./theme.d.ts"
+import { showMenu, showColors, showCancel, showHelp, showTheme, showSuccess } from './utils/messages.ts'
+import { generateFile, generateTheme } from "./utils/themes.ts"
+import Theme from"./types/theme.d.ts"
 
 const color = ['001A6E', '074799', '009990', 'E1FFBB']
 let name
