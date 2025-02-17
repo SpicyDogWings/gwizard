@@ -1,7 +1,7 @@
 {
   "tasks": {
     "dev": "deno run --watch --allow-import --allow-env --allow-write main.ts", 
-    "build": "deno compile --allow-import --allow-env --allow-write main.ts"
+    "build": "deno compile --allow-import --allow-env --allow-write --output ./bin/gwizard main.ts "
   },
   "imports": {
     "@std/assert": "jsr:@std/assert@1"

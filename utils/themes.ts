@@ -1,5 +1,5 @@
 import { darken, lighten, mix, toHex } from 'https://cdn.skypack.dev/color2k?min';
-import Theme from "./theme.d.ts"
+import Theme from "../types/theme.d.ts"
 
 function createEmptyTheme(): Theme {
   return {

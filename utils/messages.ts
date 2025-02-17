@@ -1,7 +1,7 @@
 import { colors } from "https://deno.land/x/cliffy@v1.0.0-rc.4/ansi/colors.ts";
 import { keypress } from "https://deno.land/x/cliffy@v1.0.0-rc.4/keypress/mod.ts";
 import { keymaps, maxKeySize } from "./keymaps.ts"
-import Theme from "./theme.d.ts"
+import Theme from "../types/theme.d.ts"
 
 
 const showMenu = () => {
